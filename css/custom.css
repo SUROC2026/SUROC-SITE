@@ -9,9 +9,9 @@
   --font-display: 'Audiowide', cursive, sans-serif;
 
   /* Color Palette - Deep Charcoal Space with Crimson Brand Accents */
-  --bg-dark: #0a0c10;
-  --bg-navbar: #090b0e;
-  --bg-footer: #060709;
+  --bg-dark: #0b0206;
+  --bg-navbar: rgba(9, 11, 14, 0.82);
+  --bg-footer: rgba(8, 10, 14, 0.65);
 
   --color-crimson: #be123c;
   --color-crimson-hover: #e11d48;
@@ -44,6 +44,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: clip;
+  background-color: var(--bg-dark);
 }
 
 body {
@@ -54,16 +55,21 @@ body {
   overflow-x: clip;
   position: relative;
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
-/* Full-Site Seamless Fixed Cosmic Background with Dark-Red Transparent Filter */
+/* Full-Site Seamless Fixed Cosmic Background with Dark-Red Transparent Filter.
+   Extended -10vh top & bottom to prevent any viewport gap during mobile browser address bar collapse. */
 body::before {
   content: '';
   position: fixed;
-  top: 0;
+  top: -10vh;
+  bottom: -10vh;
   left: 0;
+  right: 0;
   width: 100vw;
-  height: 100vh;
+  height: 120vh;
+  min-height: 120dvh;
   background-color: #0b0206;
   background-image:
     /* Layer 1: Ambient cosmic nebula glows */
@@ -88,14 +94,14 @@ body::before {
       180deg,
       rgba(20, 3, 8, 0.74) 0%,
       rgba(92, 14, 34, 0.55) 28%,
-      rgba(35, 5, 14, 0.7) 55%,
+      rgba(40, 6, 16, 0.65) 55%,
       rgba(75, 9, 28, 0.58) 78%,
-      rgba(12, 14, 18, 0.88) 100%
+      rgba(38, 5, 14, 0.72) 100%
     ),
     /* Layer 3: High-Res Starry Night Sky */
     url('../assets/hero/hero-background.webp');
   background-size: cover;
-  background-position: center top;
+  background-position: center center;
   background-repeat: no-repeat;
   pointer-events: none;
   z-index: -2;
@@ -139,7 +145,9 @@ button:focus-visible,
 
 /* --- 3. Navigation Bar & Active Indicator --- */
 #mainNav {
-  background-color: var(--bg-navbar);
+  background-color: rgba(9, 11, 14, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: none;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -147,10 +155,7 @@ button:focus-visible,
 }
 
 #mainNav.navbar-scrolled {
-  background-color: rgba(9, 11, 14, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: none;
+  background-color: rgba(9, 11, 14, 0.92);
   box-shadow: var(--shadow-md);
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -321,7 +326,6 @@ section {
   position: relative;
 }
 
-/* Seamless section background without harsh dividing boxes */
 section.section-alt {
   background-color: transparent;
 }
@@ -795,7 +799,7 @@ section h2::after,
 
 /* --- 10. Footer --- */
 .footer-section {
-  background-color: rgba(6, 7, 9, 0.82);
+  background-color: var(--bg-footer);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-top: none;
