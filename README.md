@@ -19,7 +19,8 @@ SUROC-SITE/
 │   ├── departments/    # Takım departman kart görselleri (WebP)
 │   ├── hero/           # Hero arka plan uzay görseli (WebP)
 │   ├── rocket/         # GÖKSU roket modeli görseli (WebP)
-│   └── sponsors/       # Sponsor ve destekçi logoları (PNG)
+│   ├── sponsors/       # Sponsor ve destekçi logoları
+│   └── workshop/       # Atölye binası görseli (WebP)
 ├── css/
 │   ├── custom.css      # Projeye özel tema stilleri ve responsive kurallar
 │   └── styles.css      # Bootstrap 5.2.3 çekirdek kütüphanesi
